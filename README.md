@@ -27,3 +27,4 @@ Om du inte skulle se korrekt design eller några resor uppradade kan det bero p�
 
 - Inte inne på VPN
 - Inte rensat kakor
+- Inte uppdaterat din host-fil med `127.0.0.1 local.www.sj.se`
