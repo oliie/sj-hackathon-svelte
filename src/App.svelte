@@ -20,7 +20,7 @@
 
 <main class="flex justify-center pt-10 px-4 w-full">
   <div class="container lg:w-1/3">
-    <h1 class="text-sjgreen text-9xl text-center">SJ ❤️ Svelte</h1>
+    <h1 class="text-sjgreen text-9xl text-center">SJ 🚀 Svelte</h1>
 
     <div class="mt-10 text-center">
       <Counter />
