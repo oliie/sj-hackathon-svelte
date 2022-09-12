@@ -1,7 +1,6 @@
 <script>
   import { onMount } from 'svelte';
   import Counter from './lib/Counter.svelte';
-  import { numberWithSpaces } from './lib/helpers';
   import ServiceCard from './lib/ServiceCard.svelte';
 
   let apiurl =
