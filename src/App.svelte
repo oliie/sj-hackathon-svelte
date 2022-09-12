@@ -7,15 +7,15 @@
   let apiurl =
     '/v19/rest/discounts/EnjaY3L29_UNDXENig_xdPZ2DWFmMgACQysDcxMI0xTCDAtlZoJDADK4CPg/prices/2022-09-12';
 
+  // Reactive statement i Svelte. Kan jämföras med en enklare variant av useEffect
   $: discountServiceGroups = [];
+  $: console.log(discountServiceGroups);
 
   onMount(async () => {
     const data = await fetch(apiurl);
     const results = await data.json();
 
     discountServiceGroups = results.discountServiceGroups;
-
-    console.log(discountServiceGroups);
   });
 </script>
 
