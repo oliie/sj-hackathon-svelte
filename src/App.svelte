@@ -5,21 +5,18 @@
   import Counter from './lib/Counter.svelte';
 
   let apiurl =
-    'https://d12.www.sj.se/v19/rest/discounts/EnjaY3L29_UNDXENig_xdPZ2DWFmMgACQysDcxMI0xTCDAtlZoJDADK4CPg/prices/2022-09-12';
+    '/v19/rest/discounts/EnjaY3L29_UNDXENig_xdPZ2DWFmMgACQysDcxMI0xTCDAtlZoJDADK4CPg/prices/2022-09-12';
 
   onMount(async () => {
     document.cookie =
       'X-api.sj.se-service=EnjaY3IM8IwP8DZkZjIxM7VgZjIwYGYKYgYAMM4Dow; expires=Session;';
     document.cookie =
       'X-api.sj.se-session-v19=I-5ecDtXjBF4mPI21VsYdLRY4UFAnoV2gdhs-P2PMa30eNpjcgzwjA_wNmRmYirO0itOZWYqSKzMyy9L1EvOz2VmZgLBYC_dYFdmJgVmppAgxzBXHx_XIGYmQzMzAwNTA0sLIyNTM4g6CHQNcwNRaYk5QNMA1f4Sbw; expires=Session;';
-    document.cookie =
-      'mbox=session#890bdfffd7504ef0963092c09064a6a1#1662974358|PC#890bdfffd7504ef0963092c09064a6a1.37_0#1726217298; expires=Session';
 
-    const data = await fetch(apiurl, {
-      mode: 'cors',
-    });
+    const data = await fetch(apiurl);
+    const results = await data.json();
 
-    console.log(data);
+    console.log(results);
   });
 </script>
 
