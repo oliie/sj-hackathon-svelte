@@ -20,3 +20,10 @@ Innehåller även Tailwind för att snabbt komma igång med design.
 $ npm i
 $ npm run dev
 ```
+
+## Problem
+
+Om du inte skulle se korrekt design eller några resor uppradade kan det bero på:
+
+- Inte inne på VPN
+- Inte rensat kakor
