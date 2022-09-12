@@ -21,7 +21,7 @@ import { onMount } from 'svelte';
 
 <!-- https://local.www.sj.se/rest/discounts/EnjaY3L29_UNDXENig_xdPZ2DWFmMgACQysDcxMI0xTCDAtlZoJDADK4CPg/prices/2022-09-12 -->
 
-<h1 class="text-green-600 bg-pink-600"> BOOOM </h1>
+<h1 class="text-sjgreen"> BOOOM </h1>
 
 <main>
   <div>
