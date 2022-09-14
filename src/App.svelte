@@ -4,9 +4,38 @@
   import MyPage from './routes/MyPage.svelte';
   import Buy from './lib/routes/Buy.svelte';
   import MySjPrio from './lib/routes/MySJPrio.svelte';
+    import { user } from './lib/stores/user';
+    import { achievements } from './lib/stores/achievements';
+    import { achievementDefaults } from './lib/stores/achievementDefaults';
+    
+    $: () => {
+      // Check if achievement in achievements hasLeveledUp
+      console.log("hej");
+      achievements.update((achievements) => {
+
+        achievements.filter((achievement) => achievement.hasLeveledUp).forEach((achievement) => {
+        console.log('hasLeveledUp');
+            // If it has, set hasLeveledUp to false
+            achievement.hasLeveledUp = false;
+            // And add the new level to the user
+            user.update((user) => ({ ...user, xp: user.xp + achievement.xpReward }));
+          })
+
+    return achievements;
+        })
+    };
 </script>
 
 <Nav />
+
+<section>
+  <progress
+  class="progress w-full progress-success"
+  value={$user.xp}
+  max={$user.nextLevelXp}
+/>
+{$user.level}
+</section>
 
 <main class="container mx-auto px-4 py-20 w-full md:w-2/3">
   {#if $navStore === 'Köp'}

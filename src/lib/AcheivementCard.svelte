@@ -1,8 +1,8 @@
 <script>
   export let name = '';
   export let description = '';
-  export let level = 0;
-  export let levels = 1;
+  export let currentLevel = 0;
+  export let maxLevel = 1;
   export let progress = 0;
   export let icon = '';
 </script>
@@ -11,8 +11,8 @@
   <div class="grid grid-cols-1 md:grid-cols-2">
     <div>
       <ul class="flex">
-        {#each Array(levels) as n, i}
-          <li class="text-xl {i >= level ? 'grayscale' : ''}">{icon}</li>
+        {#each Array(maxLevel) as n, i}
+          <li class="text-xl {i >= currentLevel ? 'grayscale opacity-70' : ''}">{icon}</li>
         {/each}
       </ul>
     </div>

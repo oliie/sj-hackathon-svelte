@@ -5,7 +5,7 @@
     {
       id: 1,
       title: 'Mitt SJ Prio',
-      path: 'Köp',
+      path: 'Mitt SJ Prio',
     },
     {
       id: 2,
@@ -27,9 +27,10 @@
   ];
 </script>
 
-<ul class="flex flex-col">
+<!-- <ul class="flex flex-col"> -->
+<ul class="menu bg-base-100 w-full border-b">
   {#each listItems as item, i}
-    <ListItem path={item.path} isLast={listItems.length - 1 === i}
+    <ListItem path={item.path}
       >{item.title}</ListItem
     >
   {/each}
