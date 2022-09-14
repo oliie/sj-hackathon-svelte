@@ -2,7 +2,7 @@
   import { navStore } from './stores/nav';
 
   export let isLast = false;
-  export let path;
+  export let path = '';
 </script>
 
 <li

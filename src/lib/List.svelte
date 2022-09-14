@@ -30,7 +30,7 @@
 <ul class="flex flex-col">
   {#each listItems as item, i}
     <ListItem path={item.path} isLast={listItems.length - 1 === i}
-      >{item.title} {item.path}</ListItem
+      >{item.title}</ListItem
     >
   {/each}
 </ul>
