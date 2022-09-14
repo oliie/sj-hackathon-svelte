@@ -4,7 +4,7 @@
   let navs = ['Köp', 'Min Sida', 'Mitt SJ Prio'];
 
   const handleNav = (nav) => {
-    navStore.set(nav);
+    navStore.goTo(nav);
   };
 </script>
 
