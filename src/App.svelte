@@ -7,7 +7,7 @@
 
 <Nav />
 
-<main class="container mx-auto px-4 py-20 w-2/3">
+<main class="container mx-auto px-4 py-20 w-full md:w-2/3">
   {#if $navStore === 'Köp'}
     <h1 class="text-4xl font-bold">Köp</h1>
     <Buy />
