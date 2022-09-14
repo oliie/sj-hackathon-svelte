@@ -9,7 +9,6 @@
     },
     {
       id: 2,
-
       title: 'Poängkonto',
     },
     {

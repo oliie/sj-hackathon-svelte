@@ -2,11 +2,10 @@
   import { navStore } from './lib/stores/nav';
   import Nav from './lib/Nav.svelte';
   import MyPage from './routes/MyPage.svelte';
-  import Buy from './lib/routes/Buy.svelte';
-  import MySjPrio from './lib/routes/MySJPrio.svelte';
+  import Buy from './routes/Buy.svelte';
+  import MySjPrio from './routes/MySJPrio.svelte';
     import { user } from './lib/stores/user';
     import { achievements } from './lib/stores/achievements';
-    import { achievementDefaults } from './lib/stores/achievementDefaults';
     
     $: () => {
       // Check if achievement in achievements hasLeveledUp
@@ -45,7 +44,13 @@
     <h1 class="text-4xl font-bold">Min sida</h1>
     <MyPage />
   {:else if $navStore === 'Mitt SJ Prio'}
-    <h1 class="text-4xl font-bold">Mitt SJ Prio</h1>
+    <div class="-mt-16">
+      <p>Nivå 7: Konduktör</p>
+      <progress class="progress progress-success" value="70" max="100" />
+      <div class="text-right">SJ Priopoäng: <b>7 640p</b></div>
+    </div>
+
+    <h1 class="text-4xl font-bold mt-4">Mitt SJ Prio</h1>
     <MySjPrio />
   {/if}
 </main>

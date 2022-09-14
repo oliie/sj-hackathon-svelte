@@ -1,32 +1,14 @@
 <script>
-  import AcheivementCard from '../AcheivementCard.svelte';
-    import Button from '../Button.svelte';
-    import { achievements } from '../stores/achievements';
+  import AcheivementCard from '../lib/AcheivementCard.svelte';
+    import Button from '../lib/Button.svelte';
+    import { achievements } from '../lib/stores/achievements';
 
   const navs = ['Översikt', 'Händelser', 'Kul ombord', 'Achievements'];
 
   let selected = 'Översikt';
 </script>
 
-<nav class="mb-4">
-  <div class="mt-4">
-    <ul class="flex border-b">
-      {#each navs as nav}
-        <li
-          on:click={() => (selected = nav)}
-          class="p-4 cursor-pointer transition-all border-b-2 border-transparent {selected ===
-          nav
-            ? 'border-sjgreen'
-            : ''}"
-        >
-          {nav}
-        </li>
-      {/each}
-    </ul>
-  </div>
-</nav>
-
-<div class="grid grid-cols-2 gap-2">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
   {#each $achievements as achievement}
     <AcheivementCard
       {...achievement}

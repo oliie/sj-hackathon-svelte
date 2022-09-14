@@ -1,6 +1,10 @@
 <script>
-    import Button from '../Button.svelte';
-    import { achievements } from '../stores/achievements';
+    import Button from "../lib/Button.svelte";
+    import { achievements } from "../lib/stores/achievements";
+
+
+    
+    
 </script>
 
 
