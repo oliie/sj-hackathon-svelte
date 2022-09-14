@@ -4,39 +4,44 @@
   import MyPage from './routes/MyPage.svelte';
   import Buy from './routes/Buy.svelte';
   import MySjPrio from './routes/MySJPrio.svelte';
-    import { user } from './lib/stores/user';
-    import { achievements } from './lib/stores/achievements';
-    
-    $: () => {
-      // Check if achievement in achievements hasLeveledUp
-      console.log("hej");
-      achievements.update((achievements) => {
+  import { user } from './lib/stores/user';
+  import { achievements } from './lib/stores/achievements';
 
-        achievements.filter((achievement) => achievement.hasLeveledUp).forEach((achievement) => {
-        console.log('hasLeveledUp');
-            // If it has, set hasLeveledUp to false
-            achievement.hasLeveledUp = false;
-            // And add the new level to the user
-            user.update((user) => ({ ...user, xp: user.xp + achievement.xpReward }));
-          })
+  $: () => {
+    // Check if achievement in achievements hasLeveledUp
+    console.log('hej');
+    achievements.update((achievements) => {
+      achievements
+        .filter((achievement) => achievement.hasLeveledUp)
+        .forEach((achievement) => {
+          console.log('hasLeveledUp');
+          // If it has, set hasLeveledUp to false
+          achievement.hasLeveledUp = false;
+          // And add the new level to the user
+          user.update((user) => ({
+            ...user,
+            xp: user.xp + achievement.xpReward,
+          }));
+        });
 
-    return achievements;
-        })
-    };
+      return achievements;
+    });
+  };
 </script>
 
 <Nav />
 
-<section>
-  <progress
-  class="progress w-full progress-success"
-  value={$user.xp}
-  max={$user.nextLevelXp}
-/>
-{$user.level}
-</section>
+<main class="container mx-auto px-4 py-8 w-full md:w-2/3">
+  <div>
+    <p>Nivå 7: Konduktör</p>
+    <progress
+      class="progress w-full progress-success"
+      value={$user.xp}
+      max={$user.nextLevelXp}
+    />
+    <div class="text-right">SJ Priopoäng: <b>7 640p</b></div>
+  </div>
 
-<main class="container mx-auto px-4 py-20 w-full md:w-2/3">
   {#if $navStore === 'Köp'}
     <h1 class="text-4xl font-bold">Köp</h1>
     <Buy />
@@ -44,12 +49,6 @@
     <h1 class="text-4xl font-bold">Min sida</h1>
     <MyPage />
   {:else if $navStore === 'Mitt SJ Prio'}
-    <div class="-mt-16">
-      <p>Nivå 7: Konduktör</p>
-      <progress class="progress progress-success" value="70" max="100" />
-      <div class="text-right">SJ Priopoäng: <b>7 640p</b></div>
-    </div>
-
     <h1 class="text-4xl font-bold mt-4">Mitt SJ Prio</h1>
     <MySjPrio />
   {/if}
