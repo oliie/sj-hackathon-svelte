@@ -7,7 +7,11 @@
   export let icon = '';
 </script>
 
-<div class="rounded-xl border border-slate-300 p-4 bg-slate-100">
+<div
+  class="rounded-xl border border-slate-300 p-4 bg-slate-100 {level === levels
+    ? 'bg-gradient-to-br from-amber-300 to-amber-500"'
+    : ''}"
+>
   <div class="grid grid-cols-1 md:grid-cols-2">
     <div>
       <ul class="flex">
