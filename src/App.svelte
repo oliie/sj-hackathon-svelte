@@ -2,8 +2,8 @@
   import { navStore } from './lib/stores/nav';
   import Nav from './lib/Nav.svelte';
   import MyPage from './routes/MyPage.svelte';
-  import Buy from './lib/routes/Buy.svelte';
-  import MySjPrio from './lib/routes/MySJPrio.svelte';
+  import Buy from './routes/Buy.svelte';
+  import MySjPrio from './routes/MySJPrio.svelte';
 </script>
 
 <Nav />

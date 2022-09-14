@@ -5,7 +5,7 @@
     {
       id: 1,
       title: 'Mitt SJ Prio',
-      path: 'Köp',
+      path: 'Mitt SJ Prio',
     },
     {
       id: 2,
