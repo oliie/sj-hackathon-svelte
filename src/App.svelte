@@ -16,7 +16,13 @@
     <h1 class="text-4xl font-bold">Min sida</h1>
     <MyPage />
   {:else if $navStore === 'Mitt SJ Prio'}
-    <h1 class="text-4xl font-bold">Mitt SJ Prio</h1>
+    <div class="-mt-16">
+      <p>Nivå 7: Konduktör</p>
+      <progress class="progress progress-success" value="70" max="100" />
+      <div class="text-right">SJ Priopoäng: <b>7 640p</b></div>
+    </div>
+
+    <h1 class="text-4xl font-bold mt-4">Mitt SJ Prio</h1>
     <MySjPrio />
   {/if}
 </main>

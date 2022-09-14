@@ -11,6 +11,7 @@ module.exports = {
       colors: {
         sjgreen: '#00AA3A',
         sjgreenLight: '#e8f7e4',
+        sjmoss: '#E8F7F6',
       },
     },
   },
