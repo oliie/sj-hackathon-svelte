@@ -8,7 +8,7 @@
 
 <svelte:head><title>Min sida</title></svelte:head>
 
-<div class="container lg:w-2/3">
+<div>
   <Header />
 
   <div id="content" class="flex">

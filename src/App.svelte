@@ -1,8 +1,9 @@
 <script>
   import { navStore } from './lib/stores/nav';
   import Nav from './lib/Nav.svelte';
-  import MyPage from './lib/routes/MyPage.svelte';
+  import MyPage from './routes/MyPage.svelte';
   import Buy from './lib/routes/Buy.svelte';
+  import MySjPrio from './lib/routes/MySJPrio.svelte';
 </script>
 
 <Nav />
@@ -13,9 +14,9 @@
     <Buy />
   {:else if $navStore === 'Min Sida'}
     <h1 class="text-4xl font-bold">Min sida</h1>
-    Hopoa
+    <MyPage />
   {:else if $navStore === 'Mitt SJ Prio'}
     <h1 class="text-4xl font-bold">Mitt SJ Prio</h1>
-    <MyPage />
+    <MySjPrio />
   {/if}
 </main>
