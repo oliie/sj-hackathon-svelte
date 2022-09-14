@@ -1,7 +1,8 @@
 <script>
   import { onMount } from 'svelte';
-  import Counter from './lib/Counter.svelte';
-  import ServiceCard from './lib/ServiceCard.svelte';
+  import MyPage from './routes/MyPage.svelte';
+  import MySjPrio from './routes/MySJPrio.svelte';
+  import { router } from './stores';
 
   let apiurl =
     '/v19/rest/discounts/EnjaY3L29_UNDXENig_xdPZ2DWFmMgACQysDcxMI0xTCDAtlZoJDADK4CPg/prices/2022-09-12';
@@ -16,26 +17,15 @@
 
     discountServiceGroups = results.discountServiceGroups;
   });
+
+  let activeRoute = 'min-sida';
 </script>
 
 <main class="flex justify-center pt-10 px-4 w-full">
-  <div class="container lg:w-1/3">
-    <h1 class="text-sjgreen text-9xl text-center">SJ 🚀 Svelte</h1>
-
-    <div class="mt-10 text-center">
-      <Counter />
-    </div>
-
-    <div class="mt-10">
-      {#each discountServiceGroups as group}
-        {#each group.discountServices as ds}
-          <ServiceCard
-            serviceName={ds.service.name}
-            price={ds.price.amount}
-            description={ds.serviceHelpText}
-          />
-        {/each}
-      {/each}
-    </div>
-  </div>
+  <button on:click={() => router.goTo('mitt-sj-prio')}>Min sida</button>
+  {#if $router === 'min-sida'}
+    <MyPage />
+  {:else if $router === 'mitt-sj-prio'}
+    <MySjPrio />
+  {/if}
 </main>
