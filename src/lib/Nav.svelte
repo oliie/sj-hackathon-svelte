@@ -1,7 +1,7 @@
 <script>
   import { navStore } from './stores/nav';
 
-  let navs = ['Köp', 'Min Sida'];
+  let navs = ['Köp', 'Min Sida', 'Mitt SJ Prio'];
 
   const handleNav = (nav) => {
     navStore.set(nav);

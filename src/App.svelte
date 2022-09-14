@@ -13,6 +13,9 @@
     <Buy />
   {:else if $navStore === 'Min Sida'}
     <h1 class="text-4xl font-bold">Min sida</h1>
+    Hopoa
+  {:else if $navStore === 'Mitt SJ Prio'}
+    <h1 class="text-4xl font-bold">Mitt SJ Prio</h1>
     <MyPage />
   {/if}
 </main>
