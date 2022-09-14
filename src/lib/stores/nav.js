@@ -1,3 +1,13 @@
 import { writable } from 'svelte/store';
 
-export const navStore = writable('Köp');
+function createNavStore() {
+  const { subscribe, set } = writable('Min Sida');
+
+  return {
+    subscribe,
+    goTo: set,
+    reset: () => set('Min Sida'),
+  };
+}
+
+export const navStore = createNavStore();

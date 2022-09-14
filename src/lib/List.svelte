@@ -5,6 +5,7 @@
     {
       id: 1,
       title: 'Mitt SJ Prio',
+      path: 'Köp',
     },
     {
       id: 2,
@@ -28,6 +29,8 @@
 
 <ul class="flex flex-col">
   {#each listItems as item, i}
-    <ListItem isLast={listItems.length - 1 === i}>{item.title}</ListItem>
+    <ListItem path={item.path} isLast={listItems.length - 1 === i}
+      >{item.title} {item.path}</ListItem
+    >
   {/each}
 </ul>

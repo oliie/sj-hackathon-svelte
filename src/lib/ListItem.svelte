@@ -1,8 +1,16 @@
 <script>
+  import { navStore } from './stores/nav';
+
   export let isLast = false;
+  export let path;
 </script>
 
-<li class="p-4 border-t {isLast && 'border-b'} flex justify-between">
+<li
+  class="p-4 border-t {isLast && 'border-b'} flex justify-between"
+  on:click={() => {
+    path && navStore.goTo(path);
+  }}
+>
   <span><slot /></span>
   <svg
     xmlns="http://www.w3.org/2000/svg"
